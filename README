@@ -1,0 +1,46 @@
+Design and implement web service (REST) application for distance calculation:
+Ј	Database holds two entities:
+o	City
+І	Name
+І	Latitude
+І	Longitude
+o	Distance
+І	From city
+І	To city
+І	Distance
+Ј	Application should make it possible to calculate the distance in two ways:
+o	УCrowflightФ (straight distance) between cities. Lookup formula for distance calculation on the sphere in the internet.
+o	Lookup distance between two cities via Уdistance matrixФ (distance table in the database)
+Ј	API has 3 endpoints:
+o	List of all cities in the DB. Fields:
+І	ID
+І	Name
+o	Calculate distance
+І	Input:
+Ј	Calculation Type: <Crowflight, Distance Matrix, All>
+Ј	From City: <List of cities>
+Ј	To City: <List of Cities>
+І	Output:
+Ј	Results: all distance calculation results as requested
+o	Upload data to the DB. Uploads XML file with cities and distances into the application. Application parses it and stores it into the database.
+І	Input:
+Ј	Multipart/form-data form submission with single УFileФ input.
+І	Output:
+Ј	HTTP response code 200 without body
+Ќова€ верси€            
+Tools/Libraries
+Ј	IDEA Community Edition
+Ј	Git
+Ј	Maven
+Ј	MySQL DB
+Ј	Liquibase дл€ миграции к структуре DB
+Ј	Java 8 (можно использовать более свежие версии)
+Ј	JAXB или Jackson ObjectMapper
+Ј	Hibernate
+
+¬ыбрать одно из двух:
+Ј	JEE 8 + WildFly 14 (дл€ реализации API использовать JAX-RS)
+Ј	SpringBoot + Tomcat
+Requirements
+Ј	Use Java exceptions to indicate that distance cannot be calculated (for example, it is not in the distance table).
+Ј	Make sure you are up to speed on the following Java basics: interfaces, classes, inheritance, overriding, collections.
